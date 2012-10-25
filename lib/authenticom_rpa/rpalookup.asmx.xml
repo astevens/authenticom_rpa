@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/rpaWS/rpaLookup.asmx" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://tempuri.org/rpaWS/rpaLookup.asmx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/rpaWS/rpaLookup.asmx">
+      <s:element name="FindInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prospect" type="tns:prospect" />
+            <s:element minOccurs="0" maxOccurs="1" name="provider" type="tns:provider" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealership" type="tns:dealership" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:rpaRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="prospect">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="accessCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="requestdate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="provider">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="service" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="dealership">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="dealershipID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dealershipName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="rpaRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sourceID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FindInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindInfoResult" type="tns:rpaResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="rpaResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="prospect" type="tns:prospect" />
+          <s:element minOccurs="0" maxOccurs="1" name="provider" type="tns:provider" />
+          <s:element minOccurs="0" maxOccurs="1" name="dealership" type="tns:dealership" />
+          <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:rpaRequest" />
+          <s:element minOccurs="0" maxOccurs="1" name="match" type="tns:rpaMatch" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="rpaMatch">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="middleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="regionCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="postalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="longitude" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="latitude" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FindInfo2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prospect" type="tns:prospect" />
+            <s:element minOccurs="0" maxOccurs="1" name="provider" type="tns:provider" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealership" type="tns:dealership" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:rpaRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindInfo2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindInfo2Result" type="tns:rpaResponse2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="rpaResponse2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="prospect" type="tns:prospect" />
+          <s:element minOccurs="0" maxOccurs="1" name="provider" type="tns:provider" />
+          <s:element minOccurs="0" maxOccurs="1" name="dealership" type="tns:dealership" />
+          <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:rpaRequest" />
+          <s:element minOccurs="0" maxOccurs="1" name="match" type="tns:rpaMatch2" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="rpaMatch2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="middleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="regionCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="postalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="longitude" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="latitude" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="businessName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phoneInfo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FindInfo3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prospect" type="tns:prospect" />
+            <s:element minOccurs="0" maxOccurs="1" name="provider" type="tns:provider" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealership" type="tns:dealership" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:rpaRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindInfo3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindInfo3Result" type="tns:rpaResponse3" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="rpaResponse3">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="prospect" type="tns:prospect" />
+          <s:element minOccurs="0" maxOccurs="1" name="provider" type="tns:provider" />
+          <s:element minOccurs="0" maxOccurs="1" name="dealership" type="tns:dealership" />
+          <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:rpaRequest" />
+          <s:element minOccurs="0" maxOccurs="1" name="match" type="tns:rpaMatch3" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="rpaMatch3">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="middleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="regionCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="postalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="longitude" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="latitude" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="businessName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phoneInfo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="streetName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="unitNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="houseNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="FindInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:FindInfo" />
+  </wsdl:message>
+  <wsdl:message name="FindInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:FindInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindInfo2SoapIn">
+    <wsdl:part name="parameters" element="tns:FindInfo2" />
+  </wsdl:message>
+  <wsdl:message name="FindInfo2SoapOut">
+    <wsdl:part name="parameters" element="tns:FindInfo2Response" />
+  </wsdl:message>
+  <wsdl:message name="FindInfo3SoapIn">
+    <wsdl:part name="parameters" element="tns:FindInfo3" />
+  </wsdl:message>
+  <wsdl:message name="FindInfo3SoapOut">
+    <wsdl:part name="parameters" element="tns:FindInfo3Response" />
+  </wsdl:message>
+  <wsdl:portType name="rpaLookupSoap">
+    <wsdl:operation name="FindInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Find name and address information based on the passed in phone number.</wsdl:documentation>
+      <wsdl:input message="tns:FindInfoSoapIn" />
+      <wsdl:output message="tns:FindInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindInfo2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Find name, address, business and phone information based on the passed in phone number</wsdl:documentation>
+      <wsdl:input message="tns:FindInfo2SoapIn" />
+      <wsdl:output message="tns:FindInfo2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindInfo3">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Find name, address, business, phone, street and unit information based on the passed in phone number.</wsdl:documentation>
+      <wsdl:input message="tns:FindInfo3SoapIn" />
+      <wsdl:output message="tns:FindInfo3SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="rpaLookupSoap" type="tns:rpaLookupSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FindInfo">
+      <soap:operation soapAction="http://tempuri.org/rpaWS/rpaLookup.asmx/FindInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindInfo2">
+      <soap:operation soapAction="http://tempuri.org/rpaWS/rpaLookup.asmx/FindInfo2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindInfo3">
+      <soap:operation soapAction="http://tempuri.org/rpaWS/rpaLookup.asmx/FindInfo3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="rpaLookupSoap12" type="tns:rpaLookupSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FindInfo">
+      <soap12:operation soapAction="http://tempuri.org/rpaWS/rpaLookup.asmx/FindInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindInfo2">
+      <soap12:operation soapAction="http://tempuri.org/rpaWS/rpaLookup.asmx/FindInfo2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindInfo3">
+      <soap12:operation soapAction="http://tempuri.org/rpaWS/rpaLookup.asmx/FindInfo3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="rpaLookup">
+    <wsdl:port name="rpaLookupSoap" binding="tns:rpaLookupSoap">
+      <soap:address location="http://www.authenticom.net/rpaws/rpalookup.asmx" />
+    </wsdl:port>
+    <wsdl:port name="rpaLookupSoap12" binding="tns:rpaLookupSoap12">
+      <soap12:address location="http://www.authenticom.net/rpaws/rpalookup.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
