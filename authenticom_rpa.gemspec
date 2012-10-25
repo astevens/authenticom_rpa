@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = AuthenticomRpa::VERSION
   gem.authors       = ["Andrew Stevens"]
   gem.email         = ["andy@orangesix.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Authenticom RPA client}
+  gem.summary       = %q{Connects to the authenticom Reverse Phone Append SOAP service}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
