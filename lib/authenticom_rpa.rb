@@ -6,7 +6,7 @@ module Authenticom
 
     def initialize(access_code)
       self.access_code = access_code
-      self.client = Savon.client(File.dirname(__FILE__) + "/authenticom_rpa/rpalookup.asmx.xml")
+      self.client = Savon.client(:wsdl => File.dirname(__FILE__) + "/authenticom_rpa/rpalookup.asmx.xml")
     end
     def lookup(phone_number, options = {})
       options = {:id => "ID01", :dealer => "DEALER01"}
