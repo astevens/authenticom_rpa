@@ -35,7 +35,11 @@ module Authenticom
         }
       )
 
-      response.body[:find_info3_response][:find_info3_result][:match]
+      if response.body[:find_info3_response] && response.body[:find_info3_response][:find_info3_result] && response.body[:find_info3_response][:find_info3_result][:match]
+        response.body[:find_info3_response][:find_info3_result][:match]
+      else
+        nil
+      end
     end
   end
 end
