@@ -13,8 +13,8 @@ module Authenticom
       phone_number = phone_number.gsub(/[^0-9]/, "")
 
 
-      response = client.request(:find_info3) do
-        soap.body = {
+      response = client.call(:find_info3,
+        :message => {
           :prospect => {
             "accessCode" => access_code,
             "id" => options[:id],
@@ -33,7 +33,7 @@ module Authenticom
             "phoneNumber" => phone_number
           }
         }
-      end
+      )
 
       response.body[:find_info3_response][:find_info3_result][:match]
     end
